@@ -50,6 +50,10 @@ function changeContent(div, newContent, newColour) {
 }
 
 function newVerse() {
+    if($("#getVerse").hasClass("requesting")) {
+        return;
+    }
+    $("#getVerse").addClass("requesting");
     var verseNumber = getRandomVerseNumber();
     var url = "http://api.alquran.cloud/ayah/"
     url += verseNumber + "/editions/quran-simple,en.sahih";
@@ -81,8 +85,10 @@ function newVerse() {
         $(".btn").animate({
           backgroundColor: colour,
           borderColor: colour
-        }, 1000);
-
+        }, 1000,
+        function() {
+            $("#getVerse").removeClass("requesting");
+        });
     });
 }
 
