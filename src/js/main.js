@@ -56,9 +56,9 @@ function newVerse() {
     $("#getVerse").addClass("requesting");
     var verseNumber = getRandomVerseNumber();
     var url = "http://api.alquran.cloud/ayah/"
-    url += verseNumber + "/editions/quran-simple,en.sahih";
+    url += verseNumber + "/editions/en.sahih";
     $.getJSON(url, function(json) {
-        var verse = json.data[1];
+        var verse = json.data[0];
         var content = verse.text;
         var surah = verse.surah.number;
         var number = verse.numberInSurah;
