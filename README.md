@@ -5,6 +5,21 @@ This is a frontend web development project that I created for the
 
 You can find it running at [ayah.today](http://ayah.today)
 
+## Usage
+1. Clone this repo
+```
+git clone git@github.com:rkalis/ayah.today.git
+```
+2. Run locally with browser reload during development
+```
+gulp dev
+```
+3. Or just build it for production
+```
+gulp
+```
+The minimised and production-ready files will be in www/
+
 ## Acknowledgements
 Shoutout to [alquran](https://alquran.cloud/api) for their great Quran API.
 
