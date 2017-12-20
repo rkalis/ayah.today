@@ -56,8 +56,17 @@ gulp.task('build-html', function() {
         }))
 });
 
+/* Pipes favicon to build */
+gulp.task('build-favicon', function() {
+    return gulp.src('src/favicon.ico')
+        .pipe(gulp.dest('www'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+});
+
 /* Build everything */
-gulp.task('default', ['build-html', 'build-css', 'build-js']);
+gulp.task('default', ['build-html', 'build-favicon', 'build-css', 'build-js']);
 
 /* BrowserSync */
 gulp.task('browserSync', function() {
@@ -69,8 +78,9 @@ gulp.task('browserSync', function() {
 })
 
 /* Gulp dev - reload with BrowserSync */
-gulp.task('dev', ['browserSync', 'build-html', 'build-css', 'build-js'], function() {
+gulp.task('dev', ['browserSync', 'build-html', 'build-favicon', 'build-css', 'build-js'], function() {
     gulp.watch('src/*.html', ['build-html']);
+    gulp.watch('src/favicon.ico', ['build-favicon']);
     gulp.watch('src/scss/*.scss', ['build-css']);
     gulp.watch('src/js/*.js', ['build-js']);
 
