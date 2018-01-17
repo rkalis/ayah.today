@@ -12,11 +12,11 @@ git clone git@github.com:rkalis/ayah.today.git
 ```
 2. Run locally with browser reload during development
 ```
-gulp dev
+npm run dev
 ```
 3. Or just build it for production
 ```
-gulp
+npm run build
 ```
 The minimised and production-ready files will be in www/
 
