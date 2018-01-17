@@ -10,11 +10,15 @@ You can find it running at [ayah.today](http://ayah.today)
 ```
 git clone git@github.com:rkalis/ayah.today.git
 ```
-2. Run locally with browser reload during development
+2. Install dependencies
+```
+npm install
+```
+3. Run locally with browser reload during development
 ```
 npm run dev
 ```
-3. Or just build it for production
+4. Or just build it for production
 ```
 npm run build
 ```
